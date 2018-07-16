@@ -62,7 +62,7 @@ class DataBase {
                             if (er) {
                                 call(er, null, null);
                             } else {
-                                call(null, {message: "You are register"}, null);
+                                call(null, null, {message: "You are register"});
                             }
                         }
                     )

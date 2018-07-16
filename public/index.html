@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth server</title>
+</head>
+
+<body>
+    <header class="header-content">
+        <div class="site-container header">
+            <div class="header-main">
+                <div class="header-head">
+                    <div class="header-brand">
+                        Brand
+                    </div>
+                    <div class="header-title">
+                        Title
+                    </div>
+                </div>
+                <div class="header-links">
+                    <div class="header-nav">
+                        <div class="header-link">
+                            Home
+                        </div>
+                        <div class="header-link">
+                            History
+                        </div>
+                        <div class="header-link">
+                            Profile
+                        </div>
+                        <div class="header-link">
+                            Info
+                        </div>
+                    </div>
+                    <div class="header-log">
+                        <div class="header-link">
+                            Log in
+                        </div>
+                        <div class="header-link">
+                            Sign up
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="site-container main">
+            <main class="article-container">
+                <article class="container">
+                    <div class="article-content">
+                        <div class="article-header">Auth server</div>
+                        <div>This is auth server</div>
+                        <div id="profile"></div>
+                    </div>
+                </article>
+                <article class="container">
+                    <div class="article-content">
+                        <div class="article-header">Registration</div>
+                        <div class="input-form">
+                            <div class="input-container">
+                                <div class="input-title">Name</div>
+                                <div class="input">
+                                    <input id="register_name" type="text" placeholder="Name" required/>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <div class="input-title">Email</div>
+                                <div class="input">
+                                    <input id="register_email" type="email" placeholder="Email" required/>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <div class="input-title">Password</div>
+                                <div class="input">
+                                    <input id="register_password" type="password" placeholder="Password" required/>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <div class="input-title">Confirm Password</div>
+                                <div class="input">
+                                    <input id="register_passconf" type="password" placeholder="Confirm Password" required/>
+                                </div>
+                            </div>
+                            <div class="input-submit">
+                                <button  onClick="register()">Sign up</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="container">
+                    <div class="article-content">
+                        <div class="article-header">Login</div>
+                        <div class="input-form">
+                            <div class="input-container">
+                                <div class="input-title">Email</div>
+                                <div class="input">
+                                    <input id="login_email" type="email" placeholder="Email" required/>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <div class="input-title">Password</div>
+                                <div class="input">
+                                    <input  id="login_password" type="password" placeholder="Password" required/>
+                                </div>
+                            </div>
+                            <div class="input-submit">
+                                <button onClick="login()">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="container">
+                    <div class="article-content">
+                        <div class="article-header">Logout</div>
+                        <div class="input-form">
+                            <div class="input-submit">
+                                <button onClick="logout()">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+            <div class="aside-nav">
+                <div class="aside-nav-button" onClick="changeAside()">
+                    >
+                </div>
+            </div>
+            <aside class="aside-container">
+                <div id="aside" class="aside-content container">
+                    <div class="">
+                        Aside
+                    </div>
+                    <div class="">
+                        Aside
+                    </div>
+                    <div class="">
+                        Aside
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer class="footer-content footer">
+        <div class="site-container">
+            <div class="footer-text">Footer</div>
+        </div>
+    </footer>
+    <script src="index.js" async defer></script>
+</body>
+
+</html>

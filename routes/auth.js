@@ -13,9 +13,9 @@ router.post('/register', (req, res, next) => {
             if (err) {
                 res.status(500).send("Server error");
             } else if (info) {
-                res.send(info);
+                res.json(info);
             } else {
-                res.send(user);
+                res.json({user});
             }
         })
     }
@@ -28,14 +28,14 @@ router.post('/login', (req, res, next) => {
             console.log(err);
             res.status(500).send("Server error");
         } else if (info) {
-            res.send({message: info});
+            res.json(info);
         } else {
             req.login(user, (err) => {
                 if (err) {
                     console.log(err);
                     res.status(500).send("Server error");
                 } else {
-                    res.send(user);
+                    res.json({user});
                 }
             })
         }
@@ -44,7 +44,7 @@ router.post('/login', (req, res, next) => {
 /* GET user data */
 router.get('/getuser', (req, res, next) => {
     if (req.isAuthenticated()) {
-        res.json(req.user);
+        res.json({user:req.user});
     } else {
         res.status(401).send({message: "Not auth"});
     }
@@ -52,7 +52,7 @@ router.get('/getuser', (req, res, next) => {
 /* GET log out */
 router.get('/logout', (req, res, next) => {
     req.logout();
-    res.send({ message: "You log out"});
+    res.json({ message: "You log out"});
 });
 
 module.exports = router

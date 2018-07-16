@@ -25,8 +25,14 @@ const passport = require('./services/passport')
 // import routes
 const users = require('./routes/users')
 const auth = require('./routes/auth')
+const index = require('./routes/index')
 
 const app = express()
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
+app.use(express.static(__dirname + '/public'));
 
 // create mysql connection
 const connection = db.getConnection()
@@ -52,11 +58,8 @@ app.use(cors({
     origin: 'localhost'
 }))
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
-
 // conect routers
+app.use('/', index)
 app.use('/api/v1/users', users)
 app.use('/api/v1/auth', auth)
 
