@@ -83,7 +83,7 @@ button:hover {
 }
 
 .header-link:hover {
-    background: linear-gradient(to top, rgb(0,0,0,0.2) 5%, rgb(0,0,0,0), rgb(0,0,0,0), rgb(0,0,0,0),rgb(0,0,0,0));
+    background: rgba(0, 0, 50, 0.3);
 }
 
 .header-nav {
@@ -168,6 +168,7 @@ button:hover {
     font-weight: bold;
     font-size: 20px;
     cursor: pointer;
+    transition: background .2s ease-out;
 }
 
 .aside-nav-button:hover {
