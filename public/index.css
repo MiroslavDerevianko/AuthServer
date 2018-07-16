@@ -105,6 +105,7 @@ button:hover {
     padding: 20px 10px;
 }
 
+
 .header {
     padding: 0px 10px;
     letter-spacing: 1px;
@@ -127,17 +128,35 @@ button:hover {
 }
 
 .article-container {
-    /* flex: 1 1 70%; */
-    width: 70%;
+    flex: 0 1 65%;
+    /* width: 70%; */
     display: flex;
     flex-flow: column nowrap;
-    margin: auto;
+    margin-left: auto;
+}
+
+.side-container {
+    flex: 0 1 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+}
+
+.side-title {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(0, 0, 50, 0.7);
+}
+
+.aside-container {
+    /* flex: 1 1 30%; */
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .aside-container {
     /* flex: 1 1 30%; */
     position: relative;
-    
 }
 
 .aside-content {
@@ -228,6 +247,62 @@ button:hover {
     justify-content: center;
 }
 
+.input-photo {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.input-file {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.input-file input[type=file] {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+.input-file-label {
+    padding: 10px 0;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.input-file-label-butt {
+    border-radius: 5px 0 0 5px;
+}
+
+.input-file-label-text {
+    border-radius: 0 5px 5px 0;
+}
+
+.input-photo-img {
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px 5px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.input-photo-img > img {
+    position: absolute;
+    margin: auto;
+    min-height: 300px;
+    min-width: 300px;
+    width: 300px;
+    height: auto;
+}
+
 .input-submit {
     display: flex;
     justify-content: center;
@@ -248,10 +323,13 @@ button:hover {
         font-size: 125%;
     }
     .article-container {
-        width: 100%;
+        flex: 0 1 100%;
     }
     .header-log {
         flex-grow: 1;
+    }
+    .side-container {
+        display: none;
     }
 }
 

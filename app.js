@@ -26,6 +26,7 @@ const passport = require('./services/passport')
 const users = require('./routes/users')
 const auth = require('./routes/auth')
 const index = require('./routes/index')
+const files = require('./routes/files')
 
 const app = express()
 
@@ -33,6 +34,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(__dirname + '/public'));
+app.use('/photo', express.static(__dirname + '/res/photo'));
 
 // create mysql connection
 const connection = db.getConnection()
@@ -62,5 +64,6 @@ app.use(cors({
 app.use('/', index)
 app.use('/api/v1/users', users)
 app.use('/api/v1/auth', auth)
+app.use('/api/v1/files', files)
 
 module.exports = app

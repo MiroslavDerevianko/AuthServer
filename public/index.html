@@ -62,6 +62,22 @@
                         <div class="article-header">Registration</div>
                         <div class="input-form">
                             <div class="input-container">
+                                <div class="input-photo">
+                                    <div class="input-photo-img">
+                                        <img src="http://localhost:3000/photo/default-user.png" id="upload_user_photo_img" alt="" />
+                                    </div>
+                                    <div class="input-file">
+                                        <label class="input-file-label">
+                                            <button class="input-file-label-butt">
+                                                Choose
+                                            </button>
+                                            <input id="upload_user_photo_name" class="input-file-label-text" placeholder="File" />
+                                            <input id="upload_user_photo" type="file" onChange="chooseUserPhoto()">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-container">
                                 <div class="input-title">Name</div>
                                 <div class="input">
                                     <input id="register_name" type="text" placeholder="Name" required/>
@@ -86,7 +102,7 @@
                                 </div>
                             </div>
                             <div class="input-submit">
-                                <button  onClick="register()">Sign up</button>
+                                <button onClick="register()">Sign up</button>
                             </div>
                         </div>
                     </div>
@@ -104,7 +120,7 @@
                             <div class="input-container">
                                 <div class="input-title">Password</div>
                                 <div class="input">
-                                    <input  id="login_password" type="password" placeholder="Password" required/>
+                                    <input id="login_password" type="password" placeholder="Password" required/>
                                 </div>
                             </div>
                             <div class="input-submit">
@@ -123,7 +139,51 @@
                         </div>
                     </div>
                 </article>
+                <article class="container">
+                    <div class="article-content">
+                        <div class="article-header">Update user photo</div>
+                        <div class="input-form">
+                            <div class="input-container">
+                                <div class="input-photo">
+                                    <div class="input-photo-img">
+                                        <img src="http://localhost:3000/photo/default-user.png" id="update_user_photo_img" alt="" />
+                                    </div>
+                                    <div class="input-file">
+                                        <label class="input-file-label">
+                                            <button class="input-file-label-butt">
+                                                Choose
+                                            </button>
+                                            <input id="update_user_photo_name" class="input-file-label-text" placeholder="File" />
+                                            <input id="update_user_photo" type="file" onChange="chooseUpdateUserPhoto()">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-submit">
+                                <button onClick="updateUserPhoto()">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </main>
+            <div class="side-container">
+                <div class="container">
+                    <div class="side-title">Contacts</div>
+                    <div class="side-content">
+                        <p>Email: example@gmail.com</p>
+                        <p>Skype: exampleSkype</p>
+                        <p>Phone: +11111111111</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="side-title">Links</div>
+                    <div class="side-content">
+                        <p>Facebook: example</p>
+                        <p>Twiter: example</p>
+                        <p>Viber: +11111111111</p>
+                    </div>
+                </div>
+            </div>
             <div class="aside-nav">
                 <div class="aside-nav-button" onClick="changeAside()">
                     >

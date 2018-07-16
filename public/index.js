@@ -2,6 +2,12 @@ let curruser = null;
 
 const apiurl = 'http://localhost:3000';
 
+let file = null;
+let file_url = null;
+
+let user_photo = null;
+let user_photo_url = null;
+
 const renderProfile = (data) => {
     console.log(data);
     const profile = document.getElementById('profile');
@@ -98,6 +104,103 @@ const changeAside = () => {
         aside.classList.add('aside-close');
     } else {
         aside.classList.remove('aside-close');
+    }
+}
+
+const chooseUserPhoto = () => {
+    file = document.getElementById('upload_user_photo').files.item(0);
+    console.log(document.getElementById('upload_user_photo').files);
+    console.log(file);
+    if (file) {
+        document.getElementById('upload_user_photo_name').value = file.name;
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            user_photo_url = reader.result;
+            document.getElementById('upload_user_photo_img').src = user_photo_url;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+const uploadUserPhoto = () => {
+    if (user_photo) {
+        console.log("Upload");
+        const form = new FormData();
+        form.append("photo", file, file.name);
+        fetch(`${apiurl}/api/v1/files/upload/userphoto`, {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: form
+        })
+        .then(res => res.json())
+        .then(console.log)
+        .catch(console.log)
+    }
+}
+
+
+const chooseUpdateUserPhoto = () => {
+    file = document.getElementById('update_user_photo').files.item(0);
+    console.log(document.getElementById('update_user_photo').files);
+    console.log(file);
+    if (file) {
+        document.getElementById('update_user_photo_name').value = file.name;
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            user_photo_url = reader.result;
+            document.getElementById('update_user_photo_img').src = user_photo_url;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+const updateUserPhoto = () => {
+    if (user_photo) {
+        console.log("Update");
+        const form = new FormData();
+        form.append("photo", file, file.name);
+        fetch(`${apiurl}/api/v1/files/upload/userphoto`, {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: form
+        })
+        .then(res => res.json())
+        .then(console.log)
+        .catch(console.log)
+    }
+}
+
+
+const chooseFile = () => {
+    file = document.getElementById('upload_file').files.item(0);
+    if (file) {
+        document.getElementById('upload_name').value = file.name;
+        console.log(file);
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            file_url = reader.result;
+            document.getElementById('upload_photo').src = file_url;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+const uploadFile = () => {
+    if (file) {
+        console.log("Upload");
+        const form = new FormData();
+        form.append("photo", file, file.name);
+        console.log(form);
+        fetch(`${apiurl}/api/v1/files/upload`, {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: form
+        })
+        .then(res => res.json())
+        .then(console.log)
+        .catch(console.log)
+    } else {
+        console.log("No file choose");
     }
 }
 
